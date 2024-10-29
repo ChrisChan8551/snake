@@ -33,8 +33,18 @@ export default function mainMenu() {
 	];
 
 	const gameSpeed = 4000;
+	k.add([
+		k.text('SONIC RING RUN', { font: 'mania', size: 96 }),
+		k.anchor('center'),
+		k.pos(k.center().x, 200), //position center / top
+	]);
 
-    //initiates sonic animation
+	k.add([
+		k.text('Press Space/Click/Touch to Play', { font: 'mania', size: 32 }),
+		k.anchor('center'),
+		k.pos(k.center().x, k.center().y - 200),
+	]);
+	//initiates sonic animation
 	makeSonic(k.vec2(200, 745));
 
 	//infinite scrolling on background scene
