@@ -58,14 +58,11 @@ export default function mainMenu() {
 		bgPieces[1].moveTo(bgPieces[0].pos.x + bgPieceWidth * 2, 0);
 
 		if (platforms[1].pos.x < 0) {
-			platforms[0].moveTo(
-				platforms[1].pos.x + platforms[1].width * 4,
-				450
-			);
+			platforms[0].moveTo(platforms[1].pos.x + platformWidth * 4, 450);
 			platforms.push(platforms.shift());
 		}
 		//parallax effect
 		platforms[0].move(-gameSpeed, 0);
-		platforms[1].moveTo(platforms[0].pos.x + platforms[1].width * 4, 450);
+		platforms[1].moveTo(platforms[0].pos.x + platformWidth * 4, 450);
 	});
 }
