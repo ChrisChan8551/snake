@@ -11,6 +11,7 @@ export function makeSonic(pos) {
 		k.body({ jumpForce: 1700 }),
 		// add object to make extra methods
 		{
+			ringCollectUI: null,
 			setControls() {
 				k.onButtonPress('jump', () => {
 					if (this.isGrounded()) {
@@ -27,6 +28,14 @@ export function makeSonic(pos) {
 			},
 		},
 	]);
-    
+
+    // creates a child object in relation to sonic
+	sonic.ringCollectUI = sonic.add([
+		k.text('', { font: 'mania', size: 24 }),
+		k.color(255, 255, 0),
+		k.anchor('center'),
+		k.pos(30, -10),
+	]);
+
 	return sonic;
 }
