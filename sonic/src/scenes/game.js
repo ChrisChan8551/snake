@@ -30,7 +30,7 @@ export default function game() {
 	];
 
 	let score = 0;
-	let scoreMultiplyer = 0;
+	let scoreMultiplier = 0;
 
 	const scoreText = k.add([
 		k.text('SCORE : 0', { font: 'mania', size: 72 }),
@@ -50,8 +50,8 @@ export default function game() {
 			k.destroy(enemy);
 			sonic.play('jump');
 			sonic.jump();
-			scoreMultiplyer += 1;
-			score += 10 * scoreMultiplyer;
+			scoreMultiplier += 1;
+			score += 10 * scoreMultiplier;
 			scoreText.text = `SCORE : ${score}`;
 			if (scoreMultiplier === 1)
 				sonic.ringCollectUI.text = `+${10 * scoreMultiplier}`;
@@ -136,7 +136,7 @@ export default function game() {
 
 	k.onUpdate(() => {
 		//if sonic hits the ground, resets multiplyer
-		if (sonic.isGrounded()) scoreMultiplyer = 0;
+		if (sonic.isGrounded()) scoreMultiplier = 0;
 		if (bgPieces[1].pos.x < 0) {
 			bgPieces[0].moveTo(bgPieces[1].pos.x + bgPieceWidth * 2, 0);
 			bgPieces.push(bgPieces.shift());
